@@ -22,8 +22,8 @@ const showCountries = countries => {
 const displayCountryDetail = name => {
     const api = `https://restcountries.eu/rest/v2/name/${name}`
     fetch(api)
-    .then( res => res.json())
-    .then (data => renderCountryInfo(data[0]))
+        .then(res => res.json())
+        .then(data => renderCountryInfo(data[0]))
 }
 
 
