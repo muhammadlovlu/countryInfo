@@ -13,9 +13,9 @@ const showCountries = countries => {
        h3.innerText = country.name;
        const p = document.createElement("p");
        p.innerText = country.capital;
-        createDiv.appendChild(h3, p)
-        output.appendChild(createDiv)
-       
+        createDiv.appendChild(h3);
+        createDiv.appendChild(p);
+        output.appendChild(createDiv);
     }
 }
 
