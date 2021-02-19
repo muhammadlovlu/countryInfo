@@ -1,6 +1,6 @@
-fetch ("https://restcountries.eu/rest/v2/all")
-.then (res => res.json())
-.then (data => showCountries(data))
+fetch("https://restcountries.eu/rest/v2/all")
+    .then(res => res.json())
+    .then(data => showCountries(data))
 
 
 
@@ -8,13 +8,21 @@ const showCountries = countries => {
     const output = document.getElementById("allCountries");
     for (let i = 0; i < countries.length; i++) {
         const country = countries[i];
-       const createDiv = document.createElement("div");
-       const h3 = document.createElement("h3");
-       h3.innerText = country.name;
-       const p = document.createElement("p");
-       p.innerText = country.capital;
-        createDiv.appendChild(h3);
-        createDiv.appendChild(p);
+        const createDiv = document.createElement("div");
+        createDiv.className = 'country';
+        const countryInfo = `
+            <h3 class="countryName">${country.name}</h3>
+            <p class="capital">${country.capital}</p>
+        `
+        createDiv.innerHTML = countryInfo;
+        // const h3 = document.createElement("h3");
+        // h3.innerText = country.name;
+        // createDiv.appendChild(h3);
+
+        // const p = document.createElement("p");
+        // p.innerText = country.capital;
+        // createDiv.appendChild(p);
+
         output.appendChild(createDiv);
     }
 }
