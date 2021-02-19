@@ -2,6 +2,7 @@ fetch("https://restcountries.eu/rest/v2/all")
     .then(res => res.json())
     .then(data => showCountries(data))
 
+
 const showCountries = countries => {
     const output = document.getElementById("allCountries");
     countries.forEach(country => {
@@ -16,6 +17,7 @@ const showCountries = countries => {
         output.appendChild(createDiv);
     });
 }
+
 
 const displayCountryDetail = name => {
     const api = `https://restcountries.eu/rest/v2/name/${name}`
